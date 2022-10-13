@@ -35,7 +35,9 @@ yarn run test:api
 
 ## Smoke Test
 
-I recommend the Smoke test to be run on every commit to release or main branch since it provides the first gateway as the quality assurance since we want to know the breakage of critical functionality of the application as early as possible in development lifecycle. 
+I recommend the Smoke test to be run on every commit to release or main branch on CI pipelines since it provides the first gateway as the quality assurance since we want to know the breakage of critical functionality of the application as early as possible in development lifecycle. 
+
+There are some of the tests missing to delete the images if this was run on an environment. This might lead to the build up of the data in the DB that will need to be cleaned manually. I would have liked to delete the images from the DB through API at the end of the tests as part of the test cleanups. 
 
 ## Reports
 Currently repository have the html reporter type configured for the tests. Once the tests are complete, reports are stored on `playwright-report` folder. Reports can be viewed with the command below: 
